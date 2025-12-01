@@ -1,0 +1,32 @@
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_PASSWORD: salespass
+      POSTGRES_USER: salesuser
+      POSTGRES_DB: salesdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ETL Pipeline
+  etl:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: python database_pipeline.py
+
+volumes:
+  postgres_data:

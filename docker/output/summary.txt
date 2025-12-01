@@ -1,0 +1,8 @@
+
+📊 ETL SUMMARY
+==============
+Processed: 4 records
+Total Sales: $3,950.00
+Average Sale: $401.25
+Unique Products: 4
+Date: 2025-12-01 15:04:30
