@@ -1,0 +1,102 @@
+2025-12-02 15:07:03 - __main__ - INFO - ============================================================
+2025-12-02 15:07:03 - __main__ - INFO - ETL Pipeline Started
+2025-12-02 15:07:03 - __main__ - INFO - Log file: /app/logs/etl_pipeline_20251202.log
+2025-12-02 15:07:03 - __main__ - INFO - ============================================================
+2025-12-02 15:07:03 - __main__ - INFO - Initializing ETL pipeline components
+2025-12-02 15:07:03 - __main__ - INFO - Step 1: Extracting data
+2025-12-02 15:07:03 - src.utils.data_processor - INFO - Extracting data from /app/data/sales.csv
+2025-12-02 15:07:03 - src.utils.data_processor - INFO - Successfully extracted 4 records
+2025-12-02 15:07:03 - __main__ - INFO - Extracted 4 records successfully
+2025-12-02 15:07:03 - __main__ - INFO - Step 2: Transforming data
+2025-12-02 15:07:03 - src.utils.data_processor - INFO - Transforming data
+2025-12-02 15:07:03 - src.utils.data_processor - INFO - Transformed 4 records
+2025-12-02 15:07:03 - __main__ - INFO - Transformed 4 records
+2025-12-02 15:07:03 - __main__ - INFO - Step 3: Connecting to database
+2025-12-02 15:07:03 - src.utils.database - INFO - Attempting database connection (attempt 1/5)
+2025-12-02 15:07:03 - src.utils.database - INFO - Database connection established successfully
+2025-12-02 15:07:03 - __main__ - INFO - Step 4: Setting up database table
+2025-12-02 15:07:03 - src.utils.database - INFO - Creating/verifying sales table
+2025-12-02 15:07:03 - src.utils.database - INFO - Query affected -1 rows
+2025-12-02 15:07:03 - src.utils.database - INFO - Sales table operation completed
+2025-12-02 15:07:03 - __main__ - INFO - Step 5: Loading data into database
+2025-12-02 15:07:03 - src.utils.database - INFO - Preparing to insert 4 records
+2025-12-02 15:07:03 - src.utils.database - INFO - Successfully inserted 4 records
+2025-12-02 15:07:03 - __main__ - INFO - Successfully inserted 4 records into database
+2025-12-02 15:07:03 - __main__ - INFO - Step 6: Saving processed data to file
+2025-12-02 15:07:03 - src.utils.data_processor - INFO - Data saved to CSV: /app/output/processed_sales_20251202_150703.csv
+2025-12-02 15:07:03 - src.utils.data_processor - ERROR - Error saving file: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2025-12-02 15:07:03 - __main__ - INFO - CSV file saved: /app/output/processed_sales_20251202_150703.csv
+2025-12-02 15:07:03 - __main__ - INFO - Step 7: Generating final report
+2025-12-02 15:07:03 - src.utils.data_processor - INFO - Generating ETL report
+2025-12-02 15:07:03 - src.utils.data_processor - INFO - Report generated: 4 records processed
+2025-12-02 15:07:03 - __main__ - INFO - ============================================================
+2025-12-02 15:07:03 - __main__ - INFO - ETL PIPELINE COMPLETED SUCCESSFULLY
+2025-12-02 15:07:03 - __main__ - INFO - ============================================================
+2025-12-02 15:07:03 - __main__ - INFO - Total Records Processed: 4
+2025-12-02 15:07:03 - __main__ - INFO - Records Inserted to DB: 4
+2025-12-02 15:07:03 - __main__ - INFO - Total Revenue: $3,950.00
+2025-12-02 15:07:03 - __main__ - INFO - Average Sale: $401.25
+2025-12-02 15:07:03 - __main__ - INFO - Unique Products: 4
+2025-12-02 15:07:03 - __main__ - INFO - Product Categories: Computers, Accessories
+2025-12-02 15:07:03 - __main__ - INFO - ============================================================
+2025-12-02 15:07:03 - __main__ - INFO - CATEGORY BREAKDOWN:
+2025-12-02 15:07:03 - __main__ - INFO -   total_sales: $0.00 revenue, 0 units
+2025-12-02 15:07:03 - __main__ - INFO -   quantity: $0.00 revenue, 0 units
+2025-12-02 15:07:03 - __main__ - INFO - Step 8: Cleaning up resources
+2025-12-02 15:07:03 - src.utils.database - INFO - Database connection closed
+2025-12-02 15:07:03 - __main__ - INFO - ETL pipeline execution completed
+2025-12-02 15:10:51 - __main__ - INFO - ============================================================
+2025-12-02 15:10:51 - __main__ - INFO - ETL Pipeline Started
+2025-12-02 15:10:51 - __main__ - INFO - Log file: /app/logs/etl_pipeline_20251202.log
+2025-12-02 15:10:51 - __main__ - INFO - ============================================================
+2025-12-02 15:10:51 - __main__ - INFO - Initializing ETL pipeline components
+2025-12-02 15:10:51 - __main__ - INFO - Step 1: Extracting data
+2025-12-02 15:10:51 - src.utils.data_processor - INFO - Extracting data from /app/data/sales.csv
+2025-12-02 15:10:51 - src.utils.data_processor - INFO - Successfully extracted 4 records
+2025-12-02 15:10:51 - __main__ - INFO - Extracted 4 records successfully
+2025-12-02 15:10:51 - __main__ - INFO - Step 2: Transforming data
+2025-12-02 15:10:51 - src.utils.data_processor - INFO - Transforming data
+2025-12-02 15:10:51 - src.utils.data_processor - INFO - Transformed 4 records
+2025-12-02 15:10:51 - __main__ - INFO - Transformed 4 records
+2025-12-02 15:10:51 - __main__ - INFO - Step 3: Connecting to database
+2025-12-02 15:10:51 - src.utils.database - INFO - Attempting database connection (attempt 1/5)
+2025-12-02 15:10:51 - src.utils.database - INFO - Database connection established successfully
+2025-12-02 15:10:51 - __main__ - INFO - Step 4: Setting up database table
+2025-12-02 15:10:51 - src.utils.database - INFO - Creating/verifying sales table
+2025-12-02 15:10:51 - src.utils.database - INFO - Query affected -1 rows
+2025-12-02 15:10:51 - src.utils.database - INFO - Sales table operation completed
+2025-12-02 15:10:51 - __main__ - INFO - Step 5: Loading data into database
+2025-12-02 15:10:51 - src.utils.database - INFO - Preparing to insert 4 records
+2025-12-02 15:10:51 - src.utils.database - INFO - Successfully inserted 4 records
+2025-12-02 15:10:51 - __main__ - INFO - Successfully inserted 4 records into database
+2025-12-02 15:10:51 - __main__ - INFO - Step 6: Saving processed data to file
+2025-12-02 15:10:51 - src.utils.data_processor - INFO - Data saved to CSV: /app/output/processed_sales_20251202_151051.csv
+2025-12-02 15:10:51 - src.utils.data_processor - ERROR - Error saving file: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2025-12-02 15:10:51 - __main__ - INFO - CSV file saved: /app/output/processed_sales_20251202_151051.csv
+2025-12-02 15:10:51 - __main__ - INFO - Step 7: Generating final report
+2025-12-02 15:10:51 - src.utils.data_processor - INFO - Generating ETL report
+2025-12-02 15:10:51 - src.utils.data_processor - INFO - Report generated: 4 records processed
+2025-12-02 15:10:51 - __main__ - INFO - ============================================================
+2025-12-02 15:10:51 - __main__ - INFO - ETL PIPELINE COMPLETED SUCCESSFULLY
+2025-12-02 15:10:51 - __main__ - INFO - ============================================================
+2025-12-02 15:10:51 - __main__ - INFO - Total Records Processed: 4
+2025-12-02 15:10:51 - __main__ - INFO - Records Inserted to DB: 4
+2025-12-02 15:10:51 - __main__ - INFO - Total Revenue: $3,950.00
+2025-12-02 15:10:51 - __main__ - INFO - Average Sale: $401.25
+2025-12-02 15:10:51 - __main__ - INFO - Unique Products: 4
+2025-12-02 15:10:51 - __main__ - INFO - Product Categories: Computers, Accessories
+2025-12-02 15:10:51 - __main__ - INFO - ============================================================
+2025-12-02 15:10:51 - __main__ - INFO - CATEGORY BREAKDOWN:
+2025-12-02 15:10:51 - __main__ - INFO -   total_sales: $0.00 revenue, 0 units
+2025-12-02 15:10:51 - __main__ - INFO -   quantity: $0.00 revenue, 0 units
+2025-12-02 15:10:51 - __main__ - INFO - Step 8: Cleaning up resources
+2025-12-02 15:10:51 - src.utils.database - INFO - Database connection closed
+2025-12-02 15:10:51 - __main__ - INFO - ETL pipeline execution completed

@@ -1,0 +1,57 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install flask
+
+COPY . .
+
+RUN mkdir -p /app/output
+
+# Create a simple web server Python file
+RUN cat > /app/server.py << 'PYEOF'
+import os
+import sys
+import subprocess
+import json
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+port = int(os.getenv("PORT", 8080))
+
+@app.route('/')
+def home():
+    return jsonify({
+        "service": "ETL Pipeline",
+        "status": "running",
+        "environment": "cloud"
+    })
+
+@app.route('/health')
+def health():
+    return jsonify({"status": "healthy"})
+
+@app.route('/run')
+def run_etl():
+    try:
+        result = subprocess.run(
+            [sys.executable, "src/etl_pipeline.py"],
+            capture_output=True,
+            text=True,
+            timeout=300
+        )
+        return jsonify({
+            "success": result.returncode == 0,
+            "stdout": result.stdout[-500:],
+            "stderr": result.stderr[-500:]
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=port, debug=False)
+PYEOF
+
+CMD ["python", "server.py"]
