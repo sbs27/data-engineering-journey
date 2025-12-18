@@ -1,0 +1,5 @@
+# Run every 5 minutes for testing
+*/5 * * * * cd /app && python src/scheduled_etl.py >> /app/logs/cron.log 2>&1
+
+# Also run at startup for immediate testing
+@reboot cd /app && python src/scheduled_etl.py >> /app/logs/cron.log 2>&1
